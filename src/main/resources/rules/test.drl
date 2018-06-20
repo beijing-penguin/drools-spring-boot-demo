@@ -1,0 +1,12 @@
+package com.dc.demo.entity;
+
+rule "rule_1"
+when
+    $d:DataValue(id=="001",1<value,value<13) 
+then
+    System.out.println("---------hello world!");
+end
+
+query "getIdOver"
+    dataValue : DataValue( id == "001" )
+end
