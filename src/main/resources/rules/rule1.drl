@@ -9,6 +9,7 @@ rule "2"
 		//System.out.println("hello, young xu2!");
 end
 
+global com.dc.demo.service.TestService testService
 query "queryPerson"
 	person : Person( age > 30 );
 end
