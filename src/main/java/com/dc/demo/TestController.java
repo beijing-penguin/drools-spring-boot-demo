@@ -10,6 +10,7 @@ import com.dc.demo.entity.Person;
 
 @RestController
 public class TestController {
+	
 	@Autowired
 	private StatelessKieSession kieSession;
 	

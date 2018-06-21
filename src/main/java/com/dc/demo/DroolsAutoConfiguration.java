@@ -19,7 +19,7 @@ public class DroolsAutoConfiguration {
     private static final String RULES_PATH = "rules/";
 
     @Bean
-    @ConditionalOnMissingBean(StatelessKieSession.class)
+    //@ConditionalOnMissingBean(StatelessKieSession.class)
     public StatelessKieSession kieSession() throws IOException {
     	KieHelper helper = new KieHelper();
     	ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
