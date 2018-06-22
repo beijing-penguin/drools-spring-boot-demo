@@ -1,5 +1,8 @@
 package com.dc.demo;
 
+import java.util.Collection;
+
+import org.kie.api.event.rule.RuleRuntimeEventListener;
 import org.kie.api.runtime.StatelessKieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,15 +21,18 @@ public class TestController {
 	
 	@Autowired
 	private StatelessKieSession kieSession;
-	@Autowired
-	private TestService testService;
 	
+	
+	/**
+	 * 执行某个特定的rule规则 这里ruleId=1
+	 * 执行规则中 执行testSevice.getUser方法，此方法查询数据库或者做其他业务逻辑 
+	 * @return
+	 */
 	@RequestMapping("/test1")
 	public Person test1() {
 		Person p = new Person();
 		p.setAge(31);
-		
-		kieSession.setGlobal("testService", testService);
+		p.setRuleId(1);
 		kieSession.execute(p);
 		return p;
 	}

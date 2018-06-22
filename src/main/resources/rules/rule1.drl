@@ -1,15 +1,12 @@
 package com.dc.demo.entity;
-rule "2"
-	no-loop true
-	when
-        $p : Person(age > 30);
-    then
-    	$p.setAge(50);
-    	update($p);
-		//System.out.println("hello, young xu2!");
-end
 
 global com.dc.demo.service.TestService testService
-query "queryPerson"
-	person : Person( age > 30 );
+rule "1"
+	no-loop true
+	when
+        $p : Person(ruleId == 1);
+    then
+    	$p.setAge(50);
+    	$p.setResult(testService.getUser());
+    	update($p);
 end

@@ -1,12 +1,7 @@
 package com.dc.demo.entity;
 
-
-import java.io.Serializable;
-
-public class Person implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class Person{
+	private Integer ruleId;
     private Integer age;
 
     private String name;
@@ -14,17 +9,27 @@ public class Person implements Serializable {
     private String desc;
 
 
+    private String result;
+    
 
-    public Person() {
-    }
+    
+    public Integer getRuleId() {
+		return ruleId;
+	}
 
-    public Person(Integer age, String name, String desc) {
-        this.age = age;
-        this.name = name;
-        this.desc = desc;
-    }
+	public void setRuleId(Integer ruleId) {
+		this.ruleId = ruleId;
+	}
 
-    public Integer getAge() {
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+	public Integer getAge() {
         return age;
     }
 
