@@ -1,15 +1,11 @@
 package com.dc.demo;
 
-import java.util.Collection;
-
-import org.kie.api.event.rule.RuleRuntimeEventListener;
 import org.kie.api.runtime.StatelessKieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dc.demo.entity.Person;
-import com.dc.demo.service.TestService;
 
 /**
  * 
