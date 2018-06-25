@@ -1,6 +1,6 @@
 package com.fescotech.business.drools.entity;
 
-global com.dc.demo.service.TestService testService
+global com.fescotech.business.drools.service.TestService testService
 rule "1"
 	no-loop true
 	when
