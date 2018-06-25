@@ -1,4 +1,4 @@
-package com.dc.demo.entity;
+package com.fescotech.business.drools.entity;
 
 global com.dc.demo.service.TestService testService
 rule "1"
@@ -6,7 +6,7 @@ rule "1"
 	when
         $p : Person(ruleId == 1);
     then
-    	$p.setAge(50);
+    	$p.setAge(55);
     	$p.setResult(testService.getUser());
     	update($p);
 end

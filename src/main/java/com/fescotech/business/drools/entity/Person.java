@@ -1,4 +1,4 @@
-package com.dc.demo.entity;
+package com.fescotech.business.drools.entity;
 
 public class Person{
 	private Integer ruleId;

@@ -1,11 +1,12 @@
-package com.dc.demo;
+package com.fescotech.business.drools.controller;
 
 import org.kie.api.runtime.StatelessKieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dc.demo.entity.Person;
+import com.fescotech.business.drools.entity.Person;
+import com.fescotech.business.drools.entity.XiaoMing;
 
 /**
  * 
@@ -31,5 +32,12 @@ public class TestController {
 		p.setRuleId(1);
 		kieSession.execute(p);
 		return p;
+	}
+	@RequestMapping("/test2")
+	public XiaoMing test2() {
+		XiaoMing xiaoMing = new XiaoMing();
+		xiaoMing.setMoney(20);
+		kieSession.execute(xiaoMing);
+		return xiaoMing;
 	}
 }

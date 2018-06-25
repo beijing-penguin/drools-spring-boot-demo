@@ -1,4 +1,4 @@
-package com.dc.demo;
+package com.fescotech.business.drools;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class SpringBootDemoApplication {
-
+	
+	/**
+	 * 规则过滤
+	 * 规格产品，规格属性，产品id---定价信息--drools-->生产产品信息
+	 * 公司定价规则
+	 * 产品id-
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}

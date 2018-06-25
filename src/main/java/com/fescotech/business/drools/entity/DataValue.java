@@ -1,4 +1,4 @@
-package com.dc.demo.entity;
+package com.fescotech.business.drools.entity;
 
 import java.util.Date;
 
