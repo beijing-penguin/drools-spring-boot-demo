@@ -63,8 +63,8 @@ public class TestController {
 		return list;
 	}
 	@RequestMapping("/test4")
-	public List<Product> test4() {
-		List<Product> products = new ArrayList<Product>();
+	public List<String> test4() {
+		List<String> products = new ArrayList<String>();
 		Product product = new Product();
 		product.setPdId("PDINF_0000000001");
 		product.setPaymentMethod("1,2");

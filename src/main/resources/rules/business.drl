@@ -2,35 +2,67 @@ package com.fescotech.business.drools.entity;
 import org.kie.api.runtime.rule.RuleContext;
 global java.util.List products
 
-rule "PDINF_0000000001"
+rule "business1"
+	when
+		$p:Product((pdId == "PDINF_0000000001") && 
+			(paymentMethod == "1,2" && paymentInsurance=="1,2,3,4,5")
+        	);
+    then
+    	products.add("PPRI_0000000001");
+    	products.add("PPRI_0000000002");
+    	products.add("PPRI_0000000003");
+end
+
+
+rule "business2"
 	when
 		$p:Product((pdId == "PDINF_0000000001") && (
-			(paymentMethod == "1,2" && paymentInsurance=="1,2,3,4,5") || 
-        	(paymentMethod=="1" && paymentInsurance=="1") || 
-        	(paymentMethod=="1" && paymentInsurance=="1,3,4")
-        	
+        	(paymentMethod=="1" && paymentInsurance=="1") 
         	));
     then
-		products.add($p);
+    	products.add("PPRI_0000000006");
 end
 
-rule "PDINF_0000000002"
+rule "business3"
+	when
+		$p:Product((pdId == "PDINF_0000000001") && (
+        	(paymentMethod=="1" && paymentInsurance=="1,3,4")
+        	));
+    then
+    	products.add("PPRI_0000000004");
+    	products.add("PPRI_0000000005");
+end
+
+
+
+rule "business4"
 	when
         $p : Product((pdId == "PDINF_0000000002") && (
-        	(paymentMethod == "1") || 
-        	(paymentMethod == "2")
+        	(paymentMethod == "1") 
         	
         	));
     then
-		products.add($p);
+    	products.add("PPRI_0000000007");
+    	products.add("PPRI_0000000008");
 end
 
-rule "PDINF_0000000004"
+rule "business5"
+	when
+        $p : Product((pdId == "PDINF_0000000002") && (
+        	(paymentMethod == "2")
+        	));
+    then
+    	products.add("PPRI_0000000009");
+    	products.add("PPRI_0000000010");
+end
+
+rule "business6"
 	when
         $p:Product((pdId == "PDINF_0000000004") && (
-        	(paymentMethod == "2")
+        	(havePayroll == 1)
         	
         	));
     then
-		products.add($p);
+    	products.add("PPRI_0000000012");
+    	products.add("PPRI_0000000013");
 end
