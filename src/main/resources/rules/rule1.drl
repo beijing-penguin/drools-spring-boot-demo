@@ -2,7 +2,6 @@ package com.fescotech.business.drools.entity;
 
 global com.fescotech.business.drools.service.TestService testService
 rule "1"
-	no-loop true
 	when
         $p : Person(ruleId == 1);
     then

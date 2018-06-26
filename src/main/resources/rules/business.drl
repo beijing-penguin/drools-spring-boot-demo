@@ -1,0 +1,36 @@
+package com.fescotech.business.drools.entity;
+import org.kie.api.runtime.rule.RuleContext;
+global java.util.List products
+
+rule "PDINF_0000000001"
+	when
+		$p:Product((pdId == "PDINF_0000000001") && (
+			(paymentMethod == "1,2" && paymentInsurance=="1,2,3,4,5") || 
+        	(paymentMethod=="1" && paymentInsurance=="1") || 
+        	(paymentMethod=="1" && paymentInsurance=="1,3,4")
+        	
+        	));
+    then
+		products.add($p);
+end
+
+rule "PDINF_0000000002"
+	when
+        $p : Product((pdId == "PDINF_0000000002") && (
+        	(paymentMethod == "1") || 
+        	(paymentMethod == "2")
+        	
+        	));
+    then
+		products.add($p);
+end
+
+rule "PDINF_0000000004"
+	when
+        $p:Product((pdId == "PDINF_0000000004") && (
+        	(paymentMethod == "2")
+        	
+        	));
+    then
+		products.add($p);
+end

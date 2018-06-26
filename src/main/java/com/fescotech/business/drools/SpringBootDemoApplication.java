@@ -23,8 +23,9 @@ public class SpringBootDemoApplication {
 	 * 公司定价规则
 	 * 产品id-
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}
 }
