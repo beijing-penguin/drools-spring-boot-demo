@@ -1,19 +1,9 @@
 package com.dc.demo;
 
-import java.util.List;
-
-import org.dc.jdbc.config.JDBCConfig;
-import org.dc.jdbc.core.DBHelper;
-
-import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.fastjson.JSON;
-import com.fescotech.business.drools.entity.PdAttr;
-import com.fescotech.business.drools.entity.PdInfo;
-
 public class SpringBootDemoApplicationTests {
 
 	public static void main(String[] args) throws Exception {
-		DruidDataSource dataSource = new DruidDataSource();
+		/*DruidDataSource dataSource = new DruidDataSource();
 		dataSource.setUsername("na_product");
 		dataSource.setPassword("product_pwd");
 		dataSource.setUrl("jdbc:oracle:thin:@10.0.75.47:1521:qglm");
@@ -29,7 +19,7 @@ public class SpringBootDemoApplicationTests {
 				}
 			}
 		}
-		System.out.println(JSON.toJSONString(list));
+		System.out.println(JSON.toJSONString(list));*/
 	}
 
 }

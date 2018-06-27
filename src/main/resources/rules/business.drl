@@ -1,46 +1,45 @@
-package com.fescotech.business.drools.entity;
+package com.fescotech.business.drools.entity.vo;
 import org.kie.api.runtime.rule.RuleContext;
 global java.util.List products
 
 rule "business1"
 	when
-		$p:Product((pdId == "PDINF_0000000001") && 
-			(paymentMethod == "1,2" && paymentInsurance=="1,2,3,4,5")
-        	);
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000001" && 
+			containPdAttr("PPATT_0000000001","1,2") && 
+			containPdAttr("PPATT_0000000002","1,2,3,4,5"));
     then
     	products.add("PPRI_0000000001");
     	products.add("PPRI_0000000002");
     	products.add("PPRI_0000000003");
 end
 
-
 rule "business2"
 	when
-		$p:Product((pdId == "PDINF_0000000001") && (
-        	(paymentMethod=="1" && paymentInsurance=="1") 
-        	));
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000001" && 
+			containPdAttr("PPATT_0000000001","1") && 
+			containPdAttr("PPATT_0000000002","1"));
     then
     	products.add("PPRI_0000000006");
 end
 
 rule "business3"
 	when
-		$p:Product((pdId == "PDINF_0000000001") && (
-        	(paymentMethod=="1" && paymentInsurance=="1,3,4")
-        	));
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000001" && 
+			containPdAttr("PPATT_0000000001","1") && 
+			containPdAttr("PPATT_0000000002","1,3,4"));
     then
     	products.add("PPRI_0000000004");
     	products.add("PPRI_0000000005");
 end
 
-
-
 rule "business4"
 	when
-        $p : Product((pdId == "PDINF_0000000002") && (
-        	(paymentMethod == "1") 
-        	
-        	));
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000002" && 
+			containPdAttr("PPATT_0000000001","1"));
     then
     	products.add("PPRI_0000000007");
     	products.add("PPRI_0000000008");
@@ -48,9 +47,9 @@ end
 
 rule "business5"
 	when
-        $p : Product((pdId == "PDINF_0000000002") && (
-        	(paymentMethod == "2")
-        	));
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000002" && 
+			containPdAttr("PPATT_0000000001","2"));
     then
     	products.add("PPRI_0000000009");
     	products.add("PPRI_0000000010");
@@ -58,11 +57,10 @@ end
 
 rule "business6"
 	when
-        $p:Product((pdId == "PDINF_0000000004") && (
-        	(havePayroll == 1)
-        	
-        	));
+		$p:PdProductAttr(
+			pdId == "PDINF_0000000005" && 
+			containPdAttr("PPATT_0000000002","2"));
     then
-    	products.add("PPRI_0000000012");
-    	products.add("PPRI_0000000013");
+    	products.add("PPRI_0000000014");
+    	products.add("PPRI_0000000015");
 end
