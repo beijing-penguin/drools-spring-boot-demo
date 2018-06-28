@@ -39,7 +39,7 @@ rule "business4"
 	when
 		$p:PdProductAttr(
 			pdId == "PDINF_0000000002" && 
-			containPdAttr("PPATT_0000000001","1"));
+			containPdAttr("PPATT_0000000003","1"));
     then
     	products.add("PPRI_0000000007");
     	products.add("PPRI_0000000008");
@@ -49,7 +49,7 @@ rule "business5"
 	when
 		$p:PdProductAttr(
 			pdId == "PDINF_0000000002" && 
-			containPdAttr("PPATT_0000000001","2"));
+			containPdAttr("PPATT_0000000003","2"));
     then
     	products.add("PPRI_0000000009");
     	products.add("PPRI_0000000010");
@@ -58,8 +58,7 @@ end
 rule "business6"
 	when
 		$p:PdProductAttr(
-			pdId == "PDINF_0000000005" && 
-			containPdAttr("PPATT_0000000002","2"));
+			pdId == "PDINF_0000000005" );
     then
     	products.add("PPRI_0000000014");
     	products.add("PPRI_0000000015");

@@ -9,10 +9,12 @@ public class PdProductAttr {
 	private List<PdAttrVo> pdAttr;
 
 	public boolean containPdAttr(String attrId,String attrVal) {
-		for (int i = 0; i < pdAttr.size(); i++) {
-			PdAttrVo pdAttrVo = pdAttr.get(i);
-			if(attrId.equals(pdAttrVo.getAttrId()) && attrVal.equals(pdAttrVo.getAttrVal())) {
-				return true;
+		if(pdAttr!=null && pdAttr.size()>0) {
+			for (int i = 0; i < pdAttr.size(); i++) {
+				PdAttrVo pdAttrVo = pdAttr.get(i);
+				if(attrId.equals(pdAttrVo.getAttrId()) && attrVal.equals(pdAttrVo.getAttrVal())) {
+					return true;
+				}
 			}
 		}
 		return false;

@@ -60,11 +60,11 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.47</version>
 		</dependency>
-<dependency>
-            <groupId>oracle</groupId>
-            <artifactId>ojdbc14</artifactId>
-            <version>10.0.2</version>
-        </dependency>
+		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.0.2</version>
+		</dependency>
 
 
 
