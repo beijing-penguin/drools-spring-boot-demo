@@ -3,6 +3,8 @@ package com.fescotech.business.drools.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import org.dc.jdbc.core.pojo.Table;
+
 /**
  * 功能描述:
  * @param: 产品属性定义表
